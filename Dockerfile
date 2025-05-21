@@ -18,6 +18,7 @@ RUN apt-get update -y && \
     apt-get install -y rustc cargo && \
     curl -fsSL https://get.docker.com | sh && \
     apt-get install -y protobuf-compiler && \
+    chmod +x entrypoint.sh && \
     python3 -m venv .venv && \
     source .venv/bin/activate && \
     python3 -m pip install --upgrade pip && \
