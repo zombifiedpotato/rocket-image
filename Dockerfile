@@ -12,9 +12,10 @@ RUN apt-get update -y && \
     apt-get install -y python3.13 && \
     apt-get install -y rustc cargo && \
     curl -fsSL https://get.docker.com | sh && \
-    apt-get install -y protobuf-compiler && \
-    python3.13 -m venv .venv && source .venv/bin/activate && \
-    python3.13 -m pip install -r requirements.txt && \
-    docker pull xrpllabsofficial/xrpld:2.3.0
+    apt-get install -y protobuf-compiler
+RUN python3.13 -m venv .venv
+RUN source .venv/bin/activate
+RUN python3.13 -m pip install -r requirements.txt
+RUN docker pull xrpllabsofficial/xrpld:2.3.0
 
 COPY rocket rocket/
