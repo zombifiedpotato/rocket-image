@@ -9,9 +9,10 @@ ARG XRPLD="xrpllabsofficial/xrpld:2.4.0"
 
 ENV ROCKET_XRPLD_DOCKER_CONTAINER=${XRPLD}
 
+SHELL ["/bin/bash", "-c"]
+
 RUN apt-get update -y && \
     apt-get upgrade -y && \
-    apt-get install -y bash && \
     apt-get install -y apt-transport-https ca-certificates curl software-properties-common && \
     apt-get install -y openssl libssl-dev && \
     apt-get install -y rustc cargo && \
@@ -19,7 +20,7 @@ RUN apt-get update -y && \
     apt-get install -y protobuf-compiler && \
     chmod +x entrypoint.sh && \
     python3 -m venv .venv && \
-    bash -c source .venv/bin/activate && \
+    source .venv/bin/activate && \
     python3 -m pip install --upgrade pip && \
     python3 -m pip install -r rocket/requirements.txt && \
     systemctl start docker && \
