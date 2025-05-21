@@ -11,7 +11,7 @@ RUN apt-get update -y && \
     curl -fsSL https://get.docker.com | sh && \
     apt-get install -y protobuf-compiler && \
     python3 -m venv .venv && source .venv/bin/activate && \
-    pip install -r requirements.txt
-RUN docker pull xrpllabsofficial/xrpld:2.3.0
+    pip install -r requirements.txt && \
+    docker pull xrpllabsofficial/xrpld:2.3.0
 
 COPY rocket rocket/
