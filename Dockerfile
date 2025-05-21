@@ -2,7 +2,8 @@ FROM ubuntu:latest
 
 RUN export LANGUAGE=C.UTF-8; export LANG=C.UTF-8; export LC_ALL=C.UTF-8; export DEBIAN_FRONTEND=noninteractive
 
-RUN add-apt-repository ppa:deadsnakes/ppa && \
+RUN apt-get install -y software-properties-common && \
+    add-apt-repository ppa:deadsnakes/ppa && \
     apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y openssl libssl-dev && \
