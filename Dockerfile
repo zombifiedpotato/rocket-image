@@ -5,6 +5,10 @@ RUN export LANGUAGE=C.UTF-8; export LANG=C.UTF-8; export LC_ALL=C.UTF-8; export 
 COPY rocket rocket/
 COPY entrypoint.sh entrypoint.sh
 
+ARG XRPLD="xrpllabsofficial/xrpld:2.4.0"
+
+ENV ROCKET_XRPLD_DOCKER_CONTAINER=${XRPLD}
+
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y bash && \
@@ -19,6 +23,6 @@ RUN apt-get update -y && \
     python3 -m pip install --upgrade pip && \
     python3 -m pip install -r rocket/requirements.txt && \
     systemctl start docker && \
-    docker pull xrpllabsofficial/xrpld:2.4.0
+    docker pull ${XRPLD}
 
 ENTRYPOINT ["/entrypoint.sh"]
