@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         repository: amousavigourabi/rocket
-        ref: main
+        ref: transaction-updates
         path: ./rocket
     - name: Pull Rocket Interceptor
       uses: actions/checkout@v4
