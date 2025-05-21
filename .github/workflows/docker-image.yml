@@ -29,7 +29,6 @@ jobs:
         path: ./rocket-interceptor
     - name: Setup build environment
       run: |
-        ls -la
         sudo chmod +x ./build.sh
         sudo ./build.sh
       shell: bash
@@ -37,5 +36,10 @@ jobs:
       run: |
         cd rocket-interceptor
         ./build.sh
+    - name: Sanity check
+      run: |
+        ls -la
+        cd rocket-interceptor
+        ls -la
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag amousavigourabi:rocket-image-$(date +%s)
