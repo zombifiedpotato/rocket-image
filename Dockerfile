@@ -12,9 +12,10 @@ RUN apt-get update -y && \
     apt-get install -y openssl libssl-dev && \
     apt-get install -y rustc cargo && \
     curl -fsSL https://get.docker.com | sh && \
-    apt-get install -y protobuf-compiler
-RUN python3 -m venv .venv && \
+    apt-get install -y protobuf-compiler && \
+    python3 -m venv .venv && \
     source .venv/bin/activate && \
     python3 -m pip install --upgrade pip && \
-    python3 -m pip install -r rocket/requirements.txt
-RUN docker pull xrpllabsofficial/xrpld:2.3.0
+    python3 -m pip install -r rocket/requirements.txt && \
+    systemctl start docker && \
+    docker pull xrpllabsofficial/xrpld:2.3.0
