@@ -39,9 +39,6 @@ jobs:
         cd ..
         mkdir rocket/rocket_interceptor -p
         mv rocket-interceptor/rocket-interceptor rocket/rocket_interceptor/rocket-interceptor
-        cd rocket
-        ls -la
-        cd rocket_interceptor
-        ls -la
+        cd rocket/rocket_interceptor
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag amousavigourabi:rocket-image-$(date +%s)
