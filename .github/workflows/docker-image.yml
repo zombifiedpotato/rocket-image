@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build Rocket
 
 on:
   push:
@@ -11,20 +11,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python 3.12
+    - name: Set up Python 3.13
       uses: actions/setup-python@v5
       with:
-        python-version: '3.12'
+        python-version: '3.13'
     - name: Pull Rocket
       uses: actions/checkout@v4
       with:
         repository: amousavigourabi/rocket
         ref: main
         path: ./rocket
-    - name: Build bugged Rippled
+    - name: Pull Rocket Interceptor
+      uses: actions/checkout@v4
+      with:
+        repository: diseb-lab/rocket-interceptor
+        ref: main
+        path: ./rocket_interceptor
+    - name: Build Rocket Interceptor
       run: |
-        chmod +x ./build.sh
-        ./build.sh
+        sudo chmod +x ./build.sh
+        sudo ./build.sh
       shell: bash
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag amousavigourabi:rocket-image-$(date +%s)
