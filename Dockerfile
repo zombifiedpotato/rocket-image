@@ -9,7 +9,7 @@ RUN apt-get update -y && \
     apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y openssl libssl-dev && \
-    apt-get install -y python3.13 python3-pip python3-venv && \
+    apt-get install -y python3.13 python3.13-dev && \
     apt-get install -y rustc cargo && \
     curl -fsSL https://get.docker.com | sh && \
     apt-get install -y protobuf-compiler
