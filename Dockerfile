@@ -3,6 +3,7 @@ FROM python:3.13-slim-bookworm
 RUN export LANGUAGE=C.UTF-8; export LANG=C.UTF-8; export LC_ALL=C.UTF-8; export DEBIAN_FRONTEND=noninteractive
 
 COPY rocket rocket/
+COPY entrypoint.sh entrypoint.sh
 
 RUN apt-get update -y && \
     apt-get upgrade -y && \
@@ -19,3 +20,5 @@ RUN apt-get update -y && \
     python3 -m pip install -r rocket/requirements.txt && \
     systemctl start docker && \
     docker pull xrpllabsofficial/xrpld:2.3.0
+
+ENTRYPOINT ["/entrypoint.sh"]
