@@ -12,7 +12,6 @@ ENV ROCKET_XRPLD_DOCKER_CONTAINER=${XRPLD}
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y bash && \
-    rm -rf /bin/sh && ln -s /bin/bash /bin/sh && \
     apt-get install -y apt-transport-https ca-certificates curl software-properties-common && \
     apt-get install -y openssl libssl-dev && \
     apt-get install -y rustc cargo && \
@@ -20,7 +19,7 @@ RUN apt-get update -y && \
     apt-get install -y protobuf-compiler && \
     chmod +x entrypoint.sh && \
     python3 -m venv .venv && \
-    source .venv/bin/activate && \
+    bash -c source .venv/bin/activate && \
     python3 -m pip install --upgrade pip && \
     python3 -m pip install -r rocket/requirements.txt && \
     systemctl start docker && \
