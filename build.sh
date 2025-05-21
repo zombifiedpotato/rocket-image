@@ -10,5 +10,4 @@ apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin do
 apt-get install -y protobuf-compiler
 
 # build
-cd rocket_interceptor
-./build.sh
+./rocket-interceptor/build.sh
