@@ -21,7 +21,6 @@ RUN apt-get update -y && \
     chmod +x entrypoint.sh && \
     python3 -m venv .venv && \
     source .venv/bin/activate && \
-    python3 -m pip install -r rocket/requirements.txt && \
-    docker pull ${XRPLD}
+    python3 -m pip install -r rocket/requirements.txt
 
 ENTRYPOINT ["/entrypoint.sh"]
