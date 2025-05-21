@@ -11,6 +11,8 @@ RUN apt-get update -y && \
     apt-get install -y openssl libssl-dev && \
     apt-get install -y python3.13 && \
     apt-get install -y rustc cargo && \
+    apt-get install -y python3.13-pip && \
+    apt-get install -y python3.13-venv && \
     curl -fsSL https://get.docker.com | sh && \
     apt-get install -y protobuf-compiler
 RUN python3.13 -m venv .venv
