@@ -19,6 +19,6 @@ RUN apt-get update -y && \
     python3 -m pip install --upgrade pip && \
     python3 -m pip install -r rocket/requirements.txt && \
     systemctl start docker && \
-    docker pull xrpllabsofficial/xrpld:2.3.0
+    docker pull xrpllabsofficial/xrpld:2.4.0
 
 ENTRYPOINT ["/entrypoint.sh"]
