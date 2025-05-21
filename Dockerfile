@@ -12,7 +12,7 @@ ENV ROCKET_XRPLD_DOCKER_CONTAINER=${XRPLD}
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y bash && \
-    rm /bin/sh && ln -s /bin/bash /bin/sh && \
+    rm -rf /bin/sh && ln -s /bin/bash /bin/sh && \
     apt-get install -y apt-transport-https ca-certificates curl software-properties-common && \
     apt-get install -y openssl libssl-dev && \
     apt-get install -y rustc cargo && \
