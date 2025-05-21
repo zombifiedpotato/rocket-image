@@ -27,11 +27,15 @@ jobs:
         repository: diseb-lab/rocket-interceptor
         ref: main
         path: ./rocket-interceptor
-    - name: Build Rocket Interceptor
+    - name: Setup build environment
       run: |
         ls -la
         sudo chmod +x ./build.sh
         sudo ./build.sh
       shell: bash
+    - name: Build Rocket Interceptor
+      run: |
+        cd rocket-interceptor
+        ./build.sh
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag amousavigourabi:rocket-image-$(date +%s)
