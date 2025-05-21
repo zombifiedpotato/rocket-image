@@ -29,6 +29,7 @@ jobs:
         path: ./rocket_interceptor
     - name: Build Rocket Interceptor
       run: |
+        ls -la
         sudo chmod +x ./build.sh
         sudo ./build.sh
       shell: bash
