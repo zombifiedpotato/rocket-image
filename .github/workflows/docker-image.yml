@@ -26,7 +26,7 @@ jobs:
       with:
         repository: diseb-lab/rocket-interceptor
         ref: main
-        path: ./rocket_interceptor
+        path: ./rocket-interceptor
     - name: Build Rocket Interceptor
       run: |
         ls -la
