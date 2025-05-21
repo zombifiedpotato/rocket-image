@@ -6,7 +6,7 @@ RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get install -y openssl libssl-dev
 RUN apt-get install -y python3
-RUN apt-get install -y rust cargo
+RUN apt-get install -y rustc cargo
 RUN apt-get install -y apt-transport-https ca-certificates curl software-properties-common
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 RUN apt-get install -y protobuf-compiler
