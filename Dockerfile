@@ -23,4 +23,4 @@ RUN apt-get update -y && \
     source .venv/bin/activate && \
     python3 -m pip install -r rocket/requirements.txt
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["python"]
