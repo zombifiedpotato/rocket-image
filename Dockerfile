@@ -3,7 +3,6 @@ FROM python:3.13-slim-bookworm
 RUN export LANGUAGE=C.UTF-8; export LANG=C.UTF-8; export LC_ALL=C.UTF-8; export DEBIAN_FRONTEND=noninteractive
 
 COPY rocket rocket/
-COPY entrypoint.sh entrypoint.sh
 
 ARG XRPLD="xrpllabsofficial/xrpld:2.4.0"
 
