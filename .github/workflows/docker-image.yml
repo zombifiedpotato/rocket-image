@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        persist-credentials: false
     - name: Set up Python 3.13
       uses: actions/setup-python@v5
       with:
@@ -18,12 +20,14 @@ jobs:
     - name: Pull Rocket
       uses: actions/checkout@v4
       with:
+        persist-credentials: false
         repository: amousavigourabi/rocket
         ref: transaction_updates
         path: ./rocket
     - name: Pull Rocket Interceptor
       uses: actions/checkout@v4
       with:
+        persist-credentials: false
         repository: diseb-lab/rocket-interceptor
         ref: main
         path: ./rocket-interceptor
