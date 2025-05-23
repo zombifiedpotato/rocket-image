@@ -50,7 +50,8 @@ jobs:
       shell: bash
     - name: Build Rocket Interceptor
       run: |
-        ./rocket/rocket_interceptor/build.sh
+        cd rocket/rocket_interceptor
+        ./build.sh
     # Install the cosign tool except on PR
     # https://github.com/sigstore/cosign-installer
     - name: Install cosign
