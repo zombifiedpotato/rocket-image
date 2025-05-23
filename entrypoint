@@ -1,13 +1,4 @@
 #!/bin/bash
 
-# Start Docker daemon
-dockerd &
-
-# Wait for Docker daemon to be ready
-while ! docker info >/dev/null 2>&1; do
-    echo "Waiting for Docker daemon..."
-    sleep 1
-done
-
 source .venv/bin/activate
 python3 -m rocket_controller $1
