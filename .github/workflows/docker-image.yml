@@ -85,7 +85,7 @@ jobs:
       with:
         context: .
         push: ${{ github.event_name != 'pull_request' }}
-        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/${{ matrix.bug }}
+        tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
         cache-from: type=gha
         cache-to: type=gha,mode=max
     # Sign the resulting Docker image digest except on PRs.
