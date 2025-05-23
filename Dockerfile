@@ -26,4 +26,4 @@ RUN chmod +x entrypoint.sh && \
     source .venv/bin/activate && \
     python3 -m pip install -r requirements.txt
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
