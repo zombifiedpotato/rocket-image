@@ -23,4 +23,4 @@ RUN apt-get update -y && \
     source .venv/bin/activate && \
     python3 -m pip install -r requirements.txt
 
-ENTRYPOINT ["python"]
+ENTRYPOINT ["python3"]
