@@ -40,22 +40,17 @@ jobs:
       uses: actions/checkout@v4
       with:
         persist-credentials: false
-        repository: diseb-lab/rocket-interceptor
+        repository: amousavigourabi/rocket-interceptor
         ref: main
-        path: ./rocket-interceptor
+        path: ./rocket/rocket_interceptor
     - name: Setup build environment
       run: |
-        sudo chmod +x ./build.sh
-        sudo ./build.sh
+        chmod +x ./build.sh
+        ./build.sh
       shell: bash
     - name: Build Rocket Interceptor
       run: |
-        cd rocket-interceptor
-        ./build.sh
-        cd ..
-        mkdir rocket/rocket_interceptor -p
-        mv rocket-interceptor/rocket-interceptor rocket/rocket_interceptor/rocket-interceptor
-        cd rocket/rocket_interceptor
+        ./rocket/rocket_interceptor/build.sh
     # Install the cosign tool except on PR
     # https://github.com/sigstore/cosign-installer
     - name: Install cosign
