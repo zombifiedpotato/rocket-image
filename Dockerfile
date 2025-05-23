@@ -12,6 +12,8 @@ ARG XRPLD="xrpllabsofficial/xrpld:2.4.0"
 
 ENV ROCKET_XRPLD_DOCKER_CONTAINER=${XRPLD}
 
+SHELL ["/bin/bash", "-c"]
+
 RUN chmod +x entrypoint.sh && \
     apt-get update -y && \
     apt-get upgrade -y && \
