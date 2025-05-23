@@ -10,6 +10,8 @@ ENV ROCKET_XRPLD_DOCKER_CONTAINER=${XRPLD}
 
 SHELL ["/bin/bash", "-c"]
 
+WORKDIR rocket
+
 RUN apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y apt-transport-https ca-certificates curl software-properties-common && \
@@ -19,6 +21,6 @@ RUN apt-get update -y && \
     apt-get install -y protobuf-compiler && \
     python3 -m venv .venv && \
     source .venv/bin/activate && \
-    python3 -m pip install -r rocket/requirements.txt
+    python3 -m pip install -r requirements.txt
 
 ENTRYPOINT ["python"]
