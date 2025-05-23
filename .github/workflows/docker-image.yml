@@ -46,7 +46,7 @@ jobs:
     - name: Setup build environment
       run: |
         chmod +x ./build.sh
-        ./build.sh
+        sudo ./build.sh
       shell: bash
     - name: Build Rocket Interceptor
       run: |
