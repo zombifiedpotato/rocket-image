@@ -1,4 +1,4 @@
-kname: Build Rocket
+name: Build Rocket
 
 on:
   push:
