@@ -9,8 +9,10 @@ WORKDIR /rocket
 COPY entrypoint entrypoint.sh
 
 ARG XRPLD="xrpllabsofficial/xrpld:2.4.0"
+ARG NETWORK_MOUNT="/rocket"
 
 ENV ROCKET_XRPLD_DOCKER_CONTAINER=${XRPLD}
+ENV ROCKET_NETWORK_MOUNT=${NETWORK_MOUNT}
 
 SHELL ["/bin/bash", "-c"]
 
