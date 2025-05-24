@@ -1,4 +1,4 @@
-name: Build Rocket
+kname: Build Rocket
 
 on:
   push:
@@ -34,14 +34,14 @@ jobs:
       with:
         persist-credentials: false
         repository: amousavigourabi/rocket
-        ref: transaction_updates
+        ref: breaking_changes
         path: ./rocket
     - name: Pull Rocket Interceptor
       uses: actions/checkout@v4
       with:
         persist-credentials: false
         repository: amousavigourabi/rocket-interceptor
-        ref: main
+        ref: breaking_changes
         path: ./rocket/rocket_interceptor
     - name: Setup build environment
       run: |
